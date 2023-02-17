@@ -5,10 +5,10 @@ if(isset($route_name)) {
 }
 @endphp
 
-<div class="course-block">
-    <div class="course-img">
+<div class="course-block mb-5">
+    <div class="course-img" style="background-color:#385777; ">
         {{-- <img src="{{ asset('uploads/'. $course->image) }}" alt="" class="img-fluid"> --}}
-        <img src="{{ $course->image }}" alt="" class="img-fluid">
+        <img class=" p-5" style="width:100%; " src="{{asset('webasset/assets/images/logo-dark2-removebg-preview.png')}}" alt="" class="img-fluid">
         {{-- <span class="course-label">Beginner</span> --}}
     </div>
 
@@ -32,7 +32,7 @@ if(isset($route_name)) {
                 <span class="course-duration"><i class="bi bi-badge3"></i>82 Lessons</span>
             </div>
 
-            <div class="buy-btn"><a href="{{ $url }}" class="btn btn-main-2 btn-small">Details</a></div>
+            <div class="buy-btn"><a href="{{ $url }}" class="btn btn-main-2 btn-small">{{__('Details')}}</a></div>
         </div>
     </div>
 </div>

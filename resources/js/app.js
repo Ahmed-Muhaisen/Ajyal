@@ -1,7 +1,7 @@
-require('./bootstrap');
+import './bootstrap';
 
-
+require('./bootstrap')
 Echo.private('App.Models.User.'+userId)
     .notification((notification) => {
-        toastr.success(notification.data)
+        console.log(notification.data);
     });

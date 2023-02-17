@@ -5,14 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    protected $maxAttempts = 2;
-    // protected $lockoutTime = (30 * 24 * 60);
-    protected $decayMinutes = 30 * 24 * 60;
-
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -32,14 +27,6 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-    public function redirectTo()
-    {
-        if(Auth::user()->type == 'admin') {
-            return '/admin';
-        }else {
-            return '/';
-        }
-    }
 
     /**
      * Create a new controller instance.

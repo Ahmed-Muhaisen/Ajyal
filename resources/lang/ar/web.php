@@ -11,4 +11,10 @@ return [
     'Blog' => 'المدونة',
     'Languages' => 'اللغات',
     'Login' => 'دخول',
+    'Description'=>'الوصف',
+    'WELCOME'=>'مرحبا',
+    'Details'=>'التفاصيل',
+    "All Courses"=>"كل الدورات",
+    "Courses"=>"دورات",
+
 ];

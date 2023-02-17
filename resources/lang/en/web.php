@@ -11,4 +11,9 @@ return [
     'Blog' => 'Blog',
     'Languages' => 'Languages',
     'Login' => 'Login',
+    'Description'=>'Description',
+    'Details'=>'Details',
+    "All Courses"=>"All Courses",
+    "Courses"=>"Courses",
+
 ];

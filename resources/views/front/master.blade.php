@@ -11,7 +11,7 @@
   <!-- Mobile Specific Meta-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" href="{{ asset('webasset/assets/images/logo-dark.png') }}">
+  <link rel="icon" href="{{ asset('webasset/assets/images/logo-dark2-removebg-preview.png') }}">
 
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="{{ asset('webasset/assets/vendors/bootstrap/bootstrap.css ') }}">
@@ -33,13 +33,18 @@
   <link rel="stylesheet" href="{{ asset('webasset/assets/css/style.css ') }}">
   <link rel="stylesheet" href="{{ asset('webasset/assets/css/responsive.css ') }}">
 
-  @if (app()->currentLocale() == 'ar')
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@800&family=Roboto&family=Tajawal:wght@500&display=swap" rel="stylesheet">
+@if (app()->currentLocale() == 'ar')
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
         body {
             direction: rtl;
             text-align: right;
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Almarai', sans-serif !important;
+
         }
         .header-form i {
             left: 14px;
@@ -62,10 +67,10 @@
 <header>
     <!-- Main Menu Start -->
     <div class="site-navigation main_menu menu-2" id="mainmenu-area">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg m-auto" style="width:95%; ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ route('website.index') }}">
-                    <img src="{{ asset('webasset/assets/images/logo-dark.png') }}" alt="Edutim" class="img-fluid">
+                <a class="navbar-brand" href="{{ route('admin.admin') }}">
+                    <img src="{{ asset('webasset/assets/images/logo-dark2-removebg-preview.png') }}" alt="Edutim" class="img-fluid" style="width:70PX; ">
                 </a>
 
                 <!-- Toggler -->

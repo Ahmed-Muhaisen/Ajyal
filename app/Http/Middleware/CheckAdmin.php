@@ -17,6 +17,7 @@ class CheckAdmin
      */
     public function handle(Request $request, Closure $next)
     {
+        if(Auth::user()->type == 'admin') return redirect()->route('admin.admin');
         if(Auth::user()->type == 'user') return redirect('/');
 
 
@@ -27,8 +28,6 @@ class CheckAdmin
         Auth::logout() // destroy current session
         Auth::check(); // Check if there any logged in user
         */
-
-
 
 
         return $next($request);

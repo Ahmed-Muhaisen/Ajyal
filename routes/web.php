@@ -3,20 +3,22 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\TestApiController;
+use App\Http\Controllers\login_wibsiteController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\VideoController;
-use App\Http\Controllers\TestApiController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('login/website', [login_wibsiteController::class, 'login'])->name('log.website');
 
-Route::prefix('admin')->name('admin.')->middleware('auth', 'admin')->group(function() {
-    Route::get('/', [DashboardController::class, 'index'])->name('index');
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::get('admin', [DashboardController::class, 'index'])->name('admin');
 
     // Categories routes
     Route::get('categories/trash', [CategoryController::class, 'trash'])->name('categories.trash');

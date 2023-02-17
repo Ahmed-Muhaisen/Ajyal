@@ -215,7 +215,7 @@
         <!-- Page level custom scripts -->
         <script src="{{ asset('adminasset/js/demo/datatables-demo.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script> const userId = '{{ Auth::id() }}'; </script>
+<script> const userId = '{{ Auth::id()}}'; </script>
         <script src="{{ asset('js/app.js') }}"></script>
 
         @yield('scripts')

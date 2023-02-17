@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Mpdf\Mpdf;
+use mpdf\mpdf;
 use App\Models\User;
 use App\Models\Video;
 use App\Services\SMS;
@@ -24,13 +24,16 @@ class MainController extends Controller
 {
     public function index()
     {
-        $categories = Category::latest()->take(5)->get();
+
+
+        $category = Category::get();
+        $categories = Category::ORDERBY('priority')->take(5)->get();
 
         $latest_courses = Course::latest()->take(3)->get();
 
         $courses = Course::all();
 
-        return view('front.index', compact('categories', 'courses', 'latest_courses'));
+        return view('front.index', compact('category','categories', 'courses', 'latest_courses'));
     }
 
     public function category($slug)
@@ -56,7 +59,7 @@ class MainController extends Controller
     public function courses()
     {
 
-        $user = User::where('email', 'moh@gmail.com')->first();
+        $user = User::where('email',Auth::user()->email)->first();
 
         $user->notify(new NewPayment);
 
@@ -64,7 +67,7 @@ class MainController extends Controller
 
         // SMS::send('0592418889', 'رسالة جديدة');
         // $sms = new SMS;
-        // $sms->send('0592418889', 'رسالة اخرى');
+        // $sms->send('0598566485', 'رسالة اخرى');
 
         $title = 'All Courses';
         $courses = Course::paginate(6);
@@ -274,13 +277,15 @@ if($response->http_code == 201) {
 
     public function certificate($user_id, $course_id)
     {
+
+
         $user = User::findOrFail($user_id);
         $course = Course::findOrFail($course_id);
 
         $data_for_qr =  "mohamednaji.com witness that candidate " . $user->name ." has been successfully passed the course " . $course->trans_name;
 
         // dd($user, $course);
-        $mpdf = new Mpdf([
+        $mpdf = new mpdf([
             'margin_top' => 0,
             'margin_left' => 0,
             'margin_right' => 0,

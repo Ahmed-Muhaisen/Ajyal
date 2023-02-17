@@ -156,6 +156,7 @@
   }
   .banner-img img {
     width: 100%;
+    margin-right: 20%;
   }
   .single-course-details .course-info ul {
     -webkit-column-count: 1;
