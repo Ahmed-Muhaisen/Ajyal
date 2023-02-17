@@ -82,7 +82,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
                     <div class="about-img2">
-                        <img src="{{ asset('webasset/assets/images/bg/choose.png') }}" alt="" class="img-fluid">
+                        <img src="{{ asset('webasset/assets/images/banner/banner-8.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
